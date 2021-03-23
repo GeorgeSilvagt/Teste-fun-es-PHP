@@ -1,0 +1,23 @@
+<?php
+    $sala = $_GET["Salario"];
+    $reajust = $_GET["percent"];
+
+    function CalReajust($sal,$percent){
+        return (($percent/100)*$sal)+$sal;
+    }
+    ?>
+    
+    <head>
+     <link rel="stylesheet" type="text/css" href="cssNovo.css">
+    <meta charset= "UTF-8"/>
+    <title></title>
+</head>
+<body>
+    <h1>Reajuste Salarial</h1>
+    <?php
+    echo"O salario de ". number_format($sala,2,".","."). " passa a ser: R$". number_format(CalReajust($sala,$reajust),2,".",",");
+    echo"</br>com aumnto de $reajust%";
+
+    ?>
+</body>
+</html>
